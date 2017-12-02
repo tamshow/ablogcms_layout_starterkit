@@ -1,0 +1,22 @@
+<!-- BEGIN_MODULE Category_Field id=category_field_%{RCCD} -->
+<div class="_snippets-cv-group">
+  <div class="_body">
+    <h3 class="_title">
+      <!-- BEGIN_IF [{contact-box_title}/nem/] -->{contact-box_title}
+      <!-- ELSE -->
+      デフォルトテキストデフォルトテキストデフォルトテキストデフォルトテキストデフォルトテキスト
+      <!-- END_IF -->
+    </h3>
+    <p class="_text">
+      <!-- BEGIN_IF [{contact-box_description}[base64]/nem/] -->
+      {contact-box_description}[escape|nl2br]
+      <!-- ELSE -->
+      デフォルトテキストデフォルトテキストデフォルトテキストデフォルトテキスト<br> デフォルトテキストデフォルトテキストデフォルトテキスト
+      <!-- END_IF -->
+    </p>
+    <div class="_btn-group">
+      <a href="<!-- BEGIN_IF [{contact-box_url}/nem/] -->{contact-box_url}<!-- ELSE -->/contact/<!-- END_IF -->" class="_btn">メールで問い合わせる<i class="material-icons is-right">navigate_next</i></a>
+    </div>
+  </div>
+</div>
+<!-- END_MODULE Category_Field -->

@@ -1,0 +1,28 @@
+<!-- BEGIN_MODULE Entry_Headline -->
+<!-- BEGIN_IF [%{VIEW}/eq/entry] -->
+<h2 class="e-heading1 e-heading1--type2"><span>%{CATEGORY_NAME}</span></h2>
+<!-- END_IF -->
+
+<table class="c-headline">
+  <tbody><!-- BEGIN entry:loop -->
+  <tr>
+    <th>{date#Y}.{date#m}.{date#d}
+      <!-- BEGIN category:veil --><span class="e-label
+         <!-- BEGIN_IF [{categoryCode}/eq/update-news] --> e-label--blue
+         <!-- ELSE_IF [{categoryCode}/eq/info-news] --> e-label--green
+         <!-- ELSE_IF [{categoryCode}/eq/business-news] --> e-label--orange
+         <!-- ELSE_IF [{categoryCode}/eq/recruit-news] --> e-label--pink
+         <!-- END_IF -->
+         ">{categoryName}</span><!-- END category:veil -->
+    </th>
+    <td>
+      <!-- BEGIN url#front --><a href="{url}"><!-- END url#front --> {title}<!-- BEGIN new --> <span class="is-color-red e-text-small">NEW!!</span><!-- END new --><!-- BEGIN url#rear --></a><!-- END url#rear --></td>
+  </tr>
+  <!-- END entry:loop -->
+  </tbody>
+</table>
+<!-- ページャー -->
+
+<!-- #include file="/include/parts/pager.html" -->
+
+<!-- END_MODULE Entry_Headline -->

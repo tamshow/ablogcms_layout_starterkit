@@ -1,0 +1,39 @@
+<!-- BEGIN_MODULE Category_List id="category_list"-->
+<!-- BEGIN_IF [%{CCD}/eq/news] -->
+<h2 class="e-heading1 e-heading1--type2"><span>%{CATEGORY_NAME}</span></h2>
+<!-- END_IF -->
+
+<!-- BEGIN moduleField -->
+<!-- BEGIN_IF [{module_heading}/nem] -->
+<h2 class="e-heading1 e-heading1--type2"><span>{module_heading}</span></h2>
+<!-- END_IF -->
+<!-- END moduleField -->
+
+<div class="c-summary-horizontal-assy">
+  <ul class="l-grid-assy-3to2to1 js-grid-match-height">
+    <!-- BEGIN category:loop --><!-- BEGIN ul#front -->
+    <!-- END ul#front --><!-- BEGIN li#front -->
+    <li class="l-grid c-card c-card--hover"><!-- END li#front --><!-- BEGIN category:veil -->
+      <a href="{url}" class="js-link_match_location-full">
+        <div class="c-card__img">
+
+          <!-- BEGIN_IF [{page_image@path}[base64]/nem/] -->
+          <img src="%{ARCHIVES_DIR}{page_image@path}[resizeImg(750,500)]" alt="">
+          <!-- ELSE -->
+          <img src="/assets/img/dummy/750x500.png" alt="" >
+          <!-- END_IF -->
+        </div>
+        <div class="c-card__body">
+          <p class="c-card__title">{name}</p>
+          <!-- BEGIN veil -->
+          <p class="c-card__text">{page_description}</p>
+          <!-- END veil -->
+        </div>
+      <!-- END amount:veil --></a><!-- END category:veil --><!-- BEGIN li#rear -->
+    </li><!-- END li#rear --><!-- BEGIN ul#rear -->
+    <!-- END ul#rear --><!-- END category:loop -->
+  </ul>
+</div>
+
+
+<!-- END_MODULE Category_List -->

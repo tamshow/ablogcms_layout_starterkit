@@ -1,0 +1,25 @@
+<h3 class="acms-admin-admin-title2">レイアウト機能設定</h3>
+
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th>一覧ページのレイアウト機能設定</th>
+    <td><input type="hidden" name="layoutIndex" value="layout_index"{layoutIndex:checked#layout_index} />
+      <label class="acms-admin-form-radio"><input type="radio" name="layoutIndex" checked="checked" value="layout_index"{layoutIndex:checked#layout_index} /><i class="acms-admin-ico-radio"></i>「layout_index.html」を使用する</label>
+      <label class="acms-admin-form-radio"><input type="radio" name="layoutIndex" value="layout_view_ccd"{layoutIndex:checked#layout_view_ccd} /><i class="acms-admin-ico-radio"></i>ページ毎設定する</label>
+      <input type="hidden" name="field[]" value="layoutIndex" />
+      <input type="hidden" name="layoutIndex:search" value="0" />
+    </td>
+  </tr>
+</table>
+
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th>詳細ページのレイアウト機能設定</th>
+    <td><input type="hidden" name="layoutEntry" value="layout_entry"{layoutEntry:checked#layout_entry} />
+      <label class="acms-admin-form-radio"><input type="radio" name="layoutEntry" checked="checked" value="layout_entry"{layoutEntry:checked#layout_entry} /><i class="acms-admin-ico-radio"></i>「layout_entry.html」を使用する</label>
+      <label class="acms-admin-form-radio"><input type="radio" name="layoutEntry" value="layout_view_ccd"{layoutEntry:checked#layout_view_ccd} /><i class="acms-admin-ico-radio"></i>ページ毎設定する</label>
+      <input type="hidden" name="field[]" value="layoutEntry" />
+      <input type="hidden" name="layoutEntry:search" value="0" />
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,286 @@
+<!--@doc
+ # モジュールのカスタムフィールドを表示します
+ # 見出し用
+ # /admin/module/name_{MODULE_NAME}.htmlなどで使用します
+ # 
+ # @id admin_module_heading
+ # @param title | 見出し
+ # @author xxx
+ # @create 2016/12/16
+-->
+
+<!-- BEGIN_SetTemplate id="admin_module_heading" title="見出し"  -->
+<tr>
+  <th>{{title}}</th>
+  <td>
+    <input type="text" name="module_heading" value="{module_heading}" class="acms-admin-form-width-3quarters" />
+    <input type="hidden" name="field[]" value="module_heading" />
+    <input type="hidden" name="module_heading:search" value="0" />
+  </td>
+</tr>
+<!-- END_SetTemplate -->
+
+<!--@doc
+ # モジュールのカスタムフィールドを表示します
+ # 小見出し用
+ # /admin/module/name_{MODULE_NAME}.htmlなどで使用します
+ #
+ # @id admin_module_sub_heading
+ # @param title | 小見出し
+ # @author xxx
+ # @create 2016/12/16
+-->
+
+<!-- BEGIN_SetTemplate id="admin_module_sub_heading" title="小見出し" -->
+<tr>
+  <th>{{title}}</th>
+  <td>
+    <input type="text" name="module_sub_heading" value="{module_sub_heading}" class="acms-admin-form-width-3quarters" />
+    <input type="hidden" name="field[]" value="module_sub_heading" />
+    <input type="hidden" name="module_sub_heading:search" value="0" />
+  </td>
+</tr>
+<!-- END_SetTemplate -->
+
+<!--@doc
+ # モジュールのカスタムフィールドを表示します
+ # リード文用
+ # /admin/module/name_{MODULE_NAME}.htmlなどで使用します
+ #
+ # @id admin_module_lead
+ # @param title | リード文
+ # @author xxx
+ # @create 2016/12/16
+-->
+
+
+<!-- BEGIN_SetTemplate id="admin_module_lead" title="リード文" -->
+
+<tr>
+  <th>{{title}}</th>
+  <td>
+    <textarea name="module_lead" cols="60" rows="5">{module_lead}</textarea>
+    <input type="hidden" name="field[]" value="module_lead" />
+    <input type="hidden" name="module_lead:search" value="0" />
+  </td>
+</tr>
+<!-- END_SetTemplate -->
+
+
+<!--@doc
+ # モジュールのカスタムフィールドを表示します
+ # リード文用
+ # /admin/module/name_{MODULE_NAME}.htmlなどで使用します
+ #
+ # @id admin_module_text
+ # @param title | 本文
+ # @author xxx
+ # @create 2016/12/16
+-->
+
+
+<!-- BEGIN_SetTemplate id="admin_module_text" title="本文" -->
+
+<tr>
+  <th>{{title}}</th>
+  <td>
+    <textarea class="js-simple-wysiwyg" name="module_text" cols="60" rows="10">{module_text}</textarea>
+    <input type="hidden" name="field[]" value="module_text" />
+    <input type="hidden" name="module_text:search" value="0" />
+  </td>
+</tr>
+<!-- END_SetTemplate -->
+
+
+<!--@doc
+ # モジュールのカスタムフィールドを表示します
+ # 画像1用
+ # /admin/module/name_{MODULE_NAME}.htmlなどで使用します
+ #
+ # @id admin_module_img1
+ # @param title | 画像1
+ # @author xxx
+ # @create 2016/12/16
+-->
+
+<!-- BEGIN_SetTemplate id="admin_module_img1" title="画像1" -->
+
+<tr>
+  <th>{{title}}</th>
+  <td class="js-img_resize_cf">
+    <!-- BEGIN_IF [{module_img1@path}/em] -->
+    <img src="" style="display:none;" class="js-img_resize_preview" />
+    <!-- END_IF -->
+    <!-- BEGIN module_img1@path:veil -->
+    <img src="%{ARCHIVES_DIR}{module_img1@path}" class="js-img_resize_preview" />
+    <input type="hidden" name="module_img1@old" value="{module_img1@path}" />
+    <br/>
+    <label>
+      <input type="checkbox" name="module_img1@edit" value="delete" />削除
+    </label>
+    <!-- END module_img1@path:veil -->
+    <input type="file" name="module_img1" size="20" class="js-img_resize_input" />
+    <br/>代替テキスト:
+    <input type="text" name="module_img1@alt" value="{module_img1@alt}" size="40" />
+    <input type="hidden" name="field[]" value="module_img1" />
+    <input type="hidden" name="module_img1:extension" value="image" />
+    <input type="hidden" name="module_img1@filename" value="" />
+  </td>
+</tr>
+<!-- END_SetTemplate -->
+
+<!--@doc
+ # モジュールのカスタムフィールドを表示します
+ # 画像2用
+ # /admin/module/name_{MODULE_NAME}.htmlなどで使用します
+ #
+ # @id admin_module_img2
+ # @param title | 画像2
+ # @author xxx
+ # @create 2016/12/16
+-->
+
+<!-- BEGIN_SetTemplate id="admin_module_img2" title="画像2" -->
+<tr>
+  <th>{{title}}</th>
+  <td class="js-img_resize_cf">
+    <!-- BEGIN_IF [{module_img2@path}/em] -->
+    <img src="" style="display:none;" class="js-img_resize_preview" />
+    <!-- END_IF -->
+    <!-- BEGIN module_img2@path:veil -->
+    <img src="%{ARCHIVES_DIR}{module_img2@path}" class="js-img_resize_preview" />
+    <input type="hidden" name="module_img2@old" value="{module_img2@path}" />
+    <br/>
+    <label>
+      <input type="checkbox" name="module_img2@edit" value="delete" />削除
+    </label>
+    <!-- END module_img2@path:veil -->
+    <input type="file" name="module_img2" size="20" class="js-img_resize_input" />
+    <br/>代替テキスト:
+    <input type="text" name="module_img2@alt" value="{module_img2@alt}" size="40" />
+    <input type="hidden" name="field[]" value="module_img2" />
+    <input type="hidden" name="module_img2:extension" value="image" />
+    <input type="hidden" name="module_img2@filename" value="" />
+  </td>
+</tr>
+<!-- END_SetTemplate -->
+
+<!--@doc
+ # モジュールのカスタムフィールドを表示します
+ # 画像3用
+ # /admin/module/name_{MODULE_NAME}.htmlなどで使用します
+ #
+ # @id admin_module_img3
+ # @param title | 画像3
+ # @author xxx
+ # @create 2016/12/16
+-->
+
+<!-- BEGIN_SetTemplate id="admin_module_img3" title="画像3" -->
+<tr>
+  <th>{{title}}</th>
+  <td class="js-img_resize_cf">
+    <!-- BEGIN_IF [{module_img3@path}/em] -->
+    <img src="" style="display:none;" class="js-img_resize_preview" />
+    <!-- END_IF -->
+    <!-- BEGIN module_img3@path:veil -->
+    <img src="%{ARCHIVES_DIR}{module_img3@path}" class="js-img_resize_preview" />
+    <input type="hidden" name="module_img3@old" value="{module_img3@path}" />
+    <br/>
+    <label>
+      <input type="checkbox" name="module_img3@edit" value="delete" />削除
+    </label>
+    <!-- END module_img3@path:veil -->
+    <input type="file" name="module_img3" size="20" class="js-img_resize_input" />
+    <br/>代替テキスト:
+    <input type="text" name="module_img3@alt" value="{module_img3@alt}" size="40" />
+    <input type="hidden" name="field[]" value="module_img3" />
+    <input type="hidden" name="module_img3:extension" value="image" />
+    <input type="hidden" name="module_img3@filename" value="" />
+  </td>
+</tr>
+<!-- END_SetTemplate -->
+
+<!--@doc
+ # モジュールのカスタムフィールドを表示します
+ # 属性1用
+ # /admin/module/name_{MODULE_NAME}.htmlなどで使用します
+ #
+ # @id admin_module_attr1
+ # @param title | 属性1
+ # @author xxx
+ # @create 2016/12/16
+-->
+
+<!-- BEGIN_SetTemplate id="admin_module_attr1" title="属性1" -->
+<tr>
+  <th>{{title}}</th>
+  <td>
+    <input type="text" name="module_attr1" value="{module_attr1}" class="acms-admin-form-width-3quarters" />
+    <input type="hidden" name="field[]" value="module_attr1" />
+    <input type="hidden" name="module_attr1:search" value="0" />
+  </td>
+</tr>
+<tr>
+  <!-- END_SetTemplate -->
+  <!--@doc
+ # モジュールのカスタムフィールドを表示します
+ # 属性2用
+ # /admin/module/name_{MODULE_NAME}.htmlなどで使用します
+ #
+ # @id admin_module_attr2
+ # @param title | 属性2
+ # @author xxx
+ # @create 2016/12/16
+-->
+  <!-- BEGIN_SetTemplate id="admin_module_attr2" title="属性2" -->
+  <th>{{title}}</th>
+  <td>
+    <input type="text" name="module_attr2" value="{module_attr2}" class="acms-admin-form-width-3quarters" />
+    <input type="hidden" name="field[]" value="module_attr2" />
+    <input type="hidden" name="module_attr2:search" value="0" />
+  </td>
+</tr>
+<!-- END_SetTemplate -->
+
+<!--@doc
+ # モジュールのカスタムフィールドを表示します
+ # URL1用
+ # /admin/module/name_{MODULE_NAME}.htmlなどで使用します
+ #
+ # @id admin_module_url1
+ # @param title | URL1
+ # @author xxx
+ # @create 2016/12/16
+-->
+<!-- BEGIN_SetTemplate id="admin_module_url1" title="URL1" -->
+<th>{{title}}</th>
+<td>
+  <input type="text" name="module_url1" value="{module_url1}" class="acms-admin-form-width-3quarters" />
+  <input type="hidden" name="field[]" value="module_url1" />
+  <input type="hidden" name="module_url1:search" value="0" />
+</td>
+</tr>
+<!-- END_SetTemplate -->
+<!--@doc
+ # モジュールのカスタムフィールドを表示します
+ # URL2用
+ # /admin/module/name_{MODULE_NAME}.htmlなどで使用します
+ #
+ # @id admin_module_url2
+ # @param title | URL2
+ # @author xxx
+ # @create 2016/12/16
+-->
+<!-- BEGIN_SetTemplate id="admin_module_url2" title="URL2" -->
+<th>{{title}}</th>
+<td>
+  <input type="text" name="module_url2" value="{module_url2}" class="acms-admin-form-width-3quarters" />
+  <input type="hidden" name="field[]" value="module_url2" />
+  <input type="hidden" name="module_url2:search" value="0" />
+</td>
+</tr>
+<!-- END_SetTemplate -->
+
+
+

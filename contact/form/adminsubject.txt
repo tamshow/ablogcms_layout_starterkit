@@ -1,0 +1,5 @@
+<!-- BEGIN_MODULE Blog_Field -->
+【要対応】<!-- BEGIN company_name:veil -->{company_name}<!-- END company_name:veil -->HPへお問い合わせが発生しました。
+<!-- END_MODULE Blog_Field -->
+
+

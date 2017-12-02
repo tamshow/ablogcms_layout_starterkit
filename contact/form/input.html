@@ -1,0 +1,348 @@
+<table class="e-form-table">
+
+
+  <tr class="e-form-unit">
+    <th class="e-form-head">お問い合わせ項目 <span class="e-form-req">必須</span></th>
+    <td class="e-form-field">
+      <div class="e-form-col-assy">
+        <div class="e-form-col12">
+
+          <select name="contact-item" id="contact-item" class="e-form-control">
+            <option value="" <!-- BEGIN_IF [{contact-item}/em] -->selected="selected"
+            <!-- END_IF -->>項目内容</option>
+            <!-- BEGIN_MODULE Category_Field -->
+            <!-- BEGIN form_contact:loop -->
+            <option value="{form_contact_item}" {contact-item:selected#{form_contact_item}}>{form_contact_item}</option>
+            <!-- END form_contact:loop -->
+            <!-- END_MODULE Category_Field -->
+          </select>
+        </div>
+
+        <input type="hidden" name="field[]" value="contact-item">
+        <input type="hidden" name="contact-item:v#required">
+        <!-- BEGIN contact-item:validator#required -->
+        <div class="e-form-message-box"><p class="e-form-error-text">お問い合わせ項目を選択してください。</p></div>
+        <!-- END contact-item:validator#required -->
+      </div>
+
+    </td>
+    <script>
+      $('#contact-item').attr({
+        'data-form-required-count': '',
+        'aria-describedby': 'contact-item-tip'
+      }).after('<div role="tooltip" id="contact-item-tip">お問い合わせ項目を選択してください。</div>');
+    </script>
+  </tr>
+  <tr class="e-form-unit">
+
+    <th class="e-form-head"><label for="name">お名前<span class="e-form-req">必須</span></label></th>
+    <td class="e-form-field">
+      <div class="e-form-col-assy">
+        <div class="e-form-col12">
+          <input type="text" name="name" id="name" value="{name}" class="e-form-control" placeholder="(例) 太郎" >
+        </div>
+        <input type="hidden" name="field[]" value="name">
+        <input type="hidden" name="name:v#required">
+        <input type="hidden" name="name:c" value="KV">
+        <!-- BEGIN name:validator#required -->
+        <div class="e-form-message-box"><p class="e-form-error-text">お名前を入力してください。</p></div>
+        <!-- END name:validator#required -->
+      </div>
+    </td>
+    <script>
+      $('#name').addClass('validate[required]').attr({
+        'data-form-required-count': '',
+        'aria-describedby': 'name-tip'
+      }).after('<div role="tooltip" id="name-tip">(例) 太郎</div>');
+    </script>
+  </tr>
+  <tr class="e-form-unit">
+
+    <th class="e-form-head"><label for="kana">お名前（かな）<span class="e-form-req">必須</span></label></th>
+    <td class="e-form-field">
+      <div class="e-form-col-assy">
+        <div class="e-form-col12">
+          <input type="text" name="kana" id="kana" value="{kana}" class="e-form-control" placeholder="(例) たろう" >
+        </div>
+        <input type="hidden" name="field[]" value="kana">
+        <input type="hidden" name="kana:v#required">
+        <input type="hidden" name="kana:c" value="KV">
+        <!-- BEGIN kana:validator#required -->
+        <div class="e-form-message-box"><p class="e-form-error-text">お名前（かな）を入力してください。</p></div>
+        <!-- END kana:validator#required -->
+      </div>
+    </td>
+    <script>
+      $('#kana').addClass('validate[required]').attr({
+        'data-form-required-count': '',
+        'aria-describedby': 'kana-tip'
+      }).after('<div role="tooltip" id="kana-tip">(例) たろう</div>');
+    </script>
+  </tr>
+  <tr class="e-form-unit">
+
+    <th class="e-form-head"><label for="email">メールアドレス<span class="e-form-req">必須</span></label>
+    </th>
+    <td class="e-form-field">
+      <div class="e-form-col-assy">
+        <div class="e-form-col12">
+          <input id="email" type="email" name="email" value="{email}" class="e-form-control" placeholder="(例) sample@sample">
+        </div>
+      </div>
+      <p class="e-form-text">確認のためもう一度入力してください</p>
+
+      <div class="e-form-col-assy">
+        <div class="e-form-col12">
+          <input id="email-confirm" type="email" name="email-confirm" value="{email-confirm}" class="e-form-control" placeholder="(例) sample@sample">
+        </div>
+
+
+        <input type="hidden" name="field[]" value="email">
+        <input type="hidden" name="email:v#required">
+        <input type="hidden" name="email:v#email">
+        <input type="hidden" name="email:c" value="a">
+        <!-- BEGIN email:validator#required -->
+        <div class="e-form-message-box"><p class="e-form-error-text">メールアドレスを入力してください。</p></div>
+        <!-- END email:validator#required -->
+        <!-- BEGIN email:validator#email -->
+        <div class="e-form-message-box"><p class="e-form-error-text">正しいメールアドレスを入力してください。</p></div>
+        <!-- END email:validator#email -->
+
+        <input type="hidden" name="field[]" value="email-confirm">
+        <input type="hidden" name="email-confirm:v#required">
+        <input type="hidden" name="email-confirm:v#email">
+        <input type="hidden" name="email-confirm:c" value="a">
+        <input type="hidden" name="email-confirm:v#equalTo" value="email">
+        <!-- BEGIN email-confirm:validator#required -->
+        <div class="e-form-message-box"><p class="e-form-error-text">メールアドレスを入力してください。</p></div>
+        <!-- END email-confirm:validator#required -->
+        <!-- BEGIN email-confirm:validator#email -->
+        <div class="e-form-message-box"><p class="e-form-error-text">正しいメールアドレスを入力してください。</p></div>
+        <!-- END email-confirm:validator#email -->
+        <!-- BEGIN email-confirm:validator#equalTo -->
+        <div class="e-form-message-box"><p class="e-form-error-text">メールアドレスが一致しません。</p></div>
+        <!-- END email-confirm:validator#equalTo -->
+      </div>
+    </td>
+    <script>
+      $('#email').addClass('validate[required,custom[email]]').attr({
+        'data-form-required-count': '',
+        'aria-describedby': 'email-tip',
+        'autocomplete': 'email'
+      }).after('<div role="tooltip" id="email-tip">例）sample@sample</div>');
+      // メールアドレス確認用
+      //validate[required,equals[メールアドレスのnameタグ]]
+      $('#email-confirm').addClass('validate[required,equals[email]]').attr({
+        'data-form-required-count': ''
+      });
+    </script>
+  </tr>
+  <tr class="e-form-unit">
+
+    <th class="e-form-head">
+      <label for="tel">電話番号<span class="e-form-req">必須</span></label>
+    </th>
+    <td class="e-form-field">
+      <div class="e-form-col-assy">
+        <div class="e-form-col12">
+          <input type="text" name="tel" id="tel" value="{tel}" class="e-form-control" placeholder="(例) 000-000-0000">
+        </div>
+        <input type="hidden" name="field[]" value="tel">
+        <input type="hidden" name="tel:c" value="n">
+        <input type="hidden" name="tel:v#required">
+        <!-- BEGIN tel:validator#required -->
+        <div class="e-form-message-box"><p class="e-form-error-text">電話番号を入力してください。</p></div>
+        <!-- END tel:validator#required -->
+      </div>
+    </td>
+    <script>
+      $('#tel').addClass('validate[required,custom[phone]]').attr({
+        'data-form-required-count': '',
+        'aria-describedby': 'tel-tip',
+        'autocomplete': 'tel'
+      }).after('<div role="tooltip" id="tel-tip">(例) 000-000-0000</div>');
+    </script>
+  </tr>
+  <tr class="e-form-unit">
+
+    <th class="e-form-head"><label for="postal-code">郵便番号<span class="e-form-any">任意</span></label>
+    </th>
+    <td class="e-form-field">
+      <div class="e-form-col-assy">
+        <div class="e-form-col12">
+          <input type="text" name="postal-code" id="postal-code" value="{postal-code}" class="e-form-control" placeholder="(例) 000-0000">
+        </div>
+        <input type="hidden" name="field[]" value="postal-code">
+        <input type="hidden" name="postal-code:c" value="a">
+
+      </div>
+    </td>
+    <script>
+      $('#postal-code').addClass('validate[custom[zip],minSize[7],maxSize[8]]').attr({
+        'aria-describedby': 'postal-code-tip',
+        'autocomplete': 'postal-code'
+      }).after('<div role="tooltip" id="postal-code-tip">(例) 000-0000</div>');
+    </script>
+  </tr>
+  <tr class="e-form-unit">
+    <th class="e-form-head">ご住所 <span class="e-form-any">任意</span></th>
+    <td class="e-form-field">
+      <div class="e-form-col-assy">
+        <div class="e-form-col12">
+
+          <select name="address-level1" id="address-level1" class="e-form-control">
+            <option value="" <!-- BEGIN_IF [{address-level1}/em] -->selected="selected"
+            <!-- END_IF -->>都道府県</option>
+            <option value="福岡県" {address-level1:selected#福岡県}>福岡県</option>
+            <option value="大分県" {address-level1:selected#大分県}>大分県</option>
+            <option value="佐賀県" {address-level1:selected#佐賀県}>佐賀県</option>
+            <option value="山口県" {address-level1:selected#山口県}>山口県</option>
+            <option value="熊本県" {address-level1:selected#熊本県}>熊本県</option>
+            <option value="長崎県" {address-level1:selected#長崎県}>長崎県</option>
+            <option value="宮崎県" {address-level1:selected#宮崎県}>宮崎県</option>
+            <option value="鹿児島県" {address-level1:selected#鹿児島県}>鹿児島県</option>
+            <option value="沖縄県" {address-level1:selected#沖縄県}>沖縄県</option>
+
+            <option value="北海道" {address-level1:selected#北海道}>北海道</option>
+
+            <option value="青森県" {address-level1:selected#青森県}>青森県</option>
+            <option value="岩手県" {address-level1:selected#岩手県}>岩手県</option>
+            <option value="宮城県" {address-level1:selected#宮城県}>宮城県</option>
+            <option value="秋田県" {address-level1:selected#秋田県}>秋田県</option>
+            <option value="山形県" {address-level1:selected#山形県}>山形県</option>
+            <option value="福島県" {address-level1:selected#福島県}>福島県</option>
+            <option value="茨城県" {address-level1:selected#茨城県}>茨城県</option>
+            <option value="栃木県" {address-level1:selected#栃木県}>栃木県</option>
+            <option value="群馬県" {address-level1:selected#群馬県}>群馬県</option>
+
+            <option value="埼玉県" {address-level1:selected#埼玉県}>埼玉県</option>
+            <option value="千葉県" {address-level1:selected#千葉県}>千葉県</option>
+            <option value="東京都" {address-level1:selected#東京都}>東京都</option>
+            <option value="神奈川県" {address-level1:selected#神奈川県}>神奈川県</option>
+            <option value="新潟県" {address-level1:selected#新潟県}>新潟県</option>
+            <option value="富山県" {address-level1:selected#富山県}>富山県</option>
+            <option value="石川県" {address-level1:selected#石川県}>石川県</option>
+            <option value="福井県" {address-level1:selected#福井県}>福井県</option>
+            <option value="山梨県" {address-level1:selected#山梨県}>山梨県</option>
+
+            <option value="長野県" {address-level1:selected#長野県}>長野県</option>
+            <option value="岐阜県" {address-level1:selected#岐阜県}>岐阜県</option>
+            <option value="静岡県" {address-level1:selected#静岡県}>静岡県</option>
+            <option value="愛知県" {address-level1:selected#愛知県}>愛知県</option>
+            <option value="三重県" {address-level1:selected#三重県}>三重県</option>
+            <option value="滋賀県" {address-level1:selected#滋賀県}>滋賀県</option>
+            <option value="京都府" {address-level1:selected#京都府}>京都府</option>
+            <option value="大阪府" {address-level1:selected#大阪府}>大阪府</option>
+            <option value="兵庫県" {address-level1:selected#兵庫県}>兵庫県</option>
+
+            <option value="奈良県" {address-level1:selected#奈良県}>奈良県</option>
+            <option value="和歌山県" {address-level1:selected#和歌山県}>和歌山県</option>
+            <option value="鳥取県" {address-level1:selected#鳥取県}>鳥取県</option>
+            <option value="島根県" {address-level1:selected#島根県}>島根県</option>
+            <option value="岡山県" {address-level1:selected#岡山県}>岡山県</option>
+            <option value="広島県" {address-level1:selected#広島県}>広島県</option>
+            <option value="徳島県" {address-level1:selected#徳島県}>徳島県</option>
+            <option value="香川県" {address-level1:selected#香川県}>香川県</option>
+
+            <option value="愛媛県" {address-level1:selected#愛媛県}>愛媛県</option>
+            <option value="高知県" {address-level1:selected#高知県}>高知県</option>
+          </select>
+        </div>
+
+        <input type="hidden" name="field[]" value="address-level1">
+        <input type="hidden" name="address-level1:v#required">
+        <!-- BEGIN address-level1:validator#required -->
+        <div class="e-form-message-box"><p class="e-form-error-text">都道府県を選択してください。</p></div>
+        <!-- END address-level1:validator#required -->
+      </div>
+
+
+      <div class="e-form-col-assy">
+        <div class="e-form-col12">
+          <input type="text" name="address-level2" id="address-level2" value="{address-level2}" class="e-form-control" placeholder="市区町村　(例) ○○○○○○○○○">
+        </div>
+        <input type="hidden" name="field[]" value="address-level2">
+        <input type="hidden" name="address-level2:v#required">
+        <input type="hidden" name="address-level2:c" value="KV">
+        <!-- BEGIN address-level2:validator#required -->
+        <div class="e-form-message-box"><p class="e-form-error-text">市区町村・番地を入力してください。</p></div>
+        <!-- END address-level2:validator#required -->
+      </div>
+
+
+      <div class="e-form-col-assy">
+        <div class="e-form-col12">
+          <input type="text" name="address-line1" id="address-line1" value="{address-line1}" class="e-form-control" placeholder="町域・番地・建物名　(例) ○○○○○○○○○">
+        </div>
+        <input type="hidden" name="field[]" value="address-line1">
+        <input type="hidden" name="address-line1:c" value="KV">
+      </div>
+
+    </td>
+    <script>
+      $('#address-level1').attr({
+        'autocomplete': 'address-level1'
+      }).after('<div role="tooltip" id="address-level1-tip">都道府県を選択してください。</div>');
+
+      $('#address-level2').attr({
+        'aria-describedby': 'address-level2-tip',
+        'autocomplete': 'address-level2'
+      }).after('<div role="tooltip" id="address-level2-tip">市区町村　(例) ○○○○○○○○○</div>');
+
+      $('#address-line1').attr({
+        'aria-describedby': 'address-line1-tip',
+        'autocomplete': 'address-line1'
+      }).after('<div role="tooltip" id="address-line1-tip">町域・番地・建物名　(例) ○○○○○○○○○</div>');
+
+      // 【自動補完】郵便番号
+      $('#postal-code').jpostal({
+        postcode: [
+          '#postal-code'
+        ],
+        address: {
+          '#address-level1': '%3',
+          '#address-level2': '%4%5'
+        }
+      });
+      // 自動補完時のバリデーション
+      $('#postal-code').on('blur keyup', function () {
+        if ($('#address-level1').val()) {
+          $('#address-level1').validationEngine('validate');
+        }
+        if ($('#address-level2').val()) {
+          $('#address-level2').validationEngine('validate');
+        }
+      });
+
+    </script>
+  </tr>
+  <tr class="e-form-unit">
+
+    <th class="e-form-head">
+      <label for="inquiry">お問い合わせ内容<span class="e-form-req">必須</span></label></th>
+    <td class="e-form-field">
+      <div class="e-form-col-assy">
+        <div class="e-form-col12">
+          <textarea name="inquiry" id="inquiry" cols="40" rows="10" class="e-form-control" placeholder="お問い合わせ内容を入力してください。">{inquiry}</textarea>
+        </div>
+        <input type="hidden" name="field[]" value="inquiry">
+        <input type="hidden" name="inquiry:c" value="KV">
+        <input type="hidden" name="inquiry:v#maxLength" value="800">
+        <!-- BEGIN inquiry:validator#required -->
+        <div class="e-form-message-box"><p class="e-form-error-text">お問い合わせ内容を入力してください。</p></div>
+        <!-- END inquiry:validator#required -->
+        <!-- BEGIN inquiry:validator#maxLength -->
+        <div class="e-form-message-box"><p class="e-form-error-text">800字以内で入力してください。</p></div>
+        <!-- END inquiry:validator#maxLength -->
+
+      </div>
+    </td>
+    <script>
+      $('#inquiry').addClass('validate[required,maxSize[800]]').attr({
+        'data-form-required-count': '',
+        'aria-describedby': 'inquiry-tip'
+      }).after('<div role="tooltip" id="inquiry-tip">(例) お問い合わせ内容を入力してください。</div>');
+    </script>
+  </tr>
+
+</table>

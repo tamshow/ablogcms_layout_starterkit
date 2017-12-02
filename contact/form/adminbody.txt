@@ -1,0 +1,33 @@
+<!-- BEGIN_MODULE Blog_Field -->
+<!-- BEGIN company_name:veil -->{company_name}<!-- END company_name:veil -->HPへ お問い合わせがありました。
+お問い合わせへの対応をお願いします。
+<!-- END_MODULE Blog_Field -->
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+受付日時：%{Y}年%{n}月%{j}日 %{H}:%{i}:%{s}
+■お問い合わせ情報
+
+お問い合わせ内容：
+{inquiry}[raw]
+
+お問い合わせ項目：
+{form_contact_item}
+
+
+
+■お客様情報
+
+お名前 ： {name}[raw]
+お名前（かな） ： {kana}[raw]
+メールアドレス ： {email}
+電話番号 ： {tel}
+ご住所 ： 〒{postal-code}　{address-level1}　{address-level2}　{address-line1}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+
+

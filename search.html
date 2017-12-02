@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <!--#include file="/include/head/meta.html" -->
+  <!--#include file="/include/head/link.html" -->
+  <!--#include file="/include/head/js.html" -->
+</head>
+
+<body>
+<!--#include file="/include/body_start.html" -->
+<!--#include file="/include/header.html" -->
+
+
+
+
+<div class="l-container">
+  <div class="l-container__inner l-container__inner--full">
+    <div class="l-content-block l-content-block--full">
+      <div class="c-main-visual c-main-visual--full">
+        <div class="c-main-visual__inner">
+          <div class="c-main-visual__bg-img">
+            <h1 class="c-main-visual__title e-heading1 e-heading1--type2"><span>サイト内検索</span></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="c-breadcrumb">
+  <div class="c-breadcrumb__inner">
+    <span><a href="%{BLOG_URL}">トップページ</a></span>
+    <!-- BEGIN_MODULE Touch_Keyword -->
+    <span>「%{KEYWORD}」 で検索</span>
+    <!-- END_MODULE Touch_Keyword -->
+    <!-- BEGIN_MODULE Touch_NotKeyword -->
+    <span>キーワード未入力</span>
+    <!-- END_MODULE Touch_NotKeyword -->
+  </div>
+</div>
+
+
+
+<main class="l-main" role="main">
+  <div class="l-container">
+    <div class="l-container__inner">
+      <div class="l-content-block">
+
+
+        <div class="rich-editor">
+          <!-- BEGIN_MODULE Touch_Keyword -->
+          <h2>「%{KEYWORD}」 で検索</h2>
+          <!-- END_MODULE Touch_Keyword -->
+          <!-- BEGIN_MODULE Touch_NotKeyword -->
+          <h2>キーワード未入力</h2>
+          <!-- END_MODULE Touch_NotKeyword -->
+        </div>
+        <div class="search-keyword">
+          <form method="post" action="/search.html" name="searchForm" role="search" aria-label="検索フォーム">
+            <div class="search-keyword__body">
+
+            </div>
+
+            <table class="e-form-table">
+              <tr class="e-form-unit">
+                <th class="e-form-head">
+                  <label for="search">キーワード検索</label>
+                </th>
+                <td class="e-form-field">
+                  <div class="e-form-row">
+                    <div class="e-form-col12">
+                      <input type="search" id="searchForm" class="e-form-control" name="keyword" value="%{KEYWORD}" size="15" placeholder="気になるワードで検索">
+                      <input type="hidden" name="query" value="keyword">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <div class="e-btn-group e-btn-group--form">
+              <button type="submit" class="e-btn e-btn--large e-btn--form" name="ACMS_POST_2GET">検索</button>
+              <input type="hidden" name="tpl" value="/search.html">
+              <input type="hidden" name="bid" value="%{BID}">
+            </div>
+
+          </form>
+        </div>
+        <!--#include file="/include/parts_layout/rich-entry-body.html" -->
+
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<!--#include file="/include/footer.html" -->
+</body>
+
+</html>
+
+

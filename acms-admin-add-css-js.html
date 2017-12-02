@@ -1,0 +1,157 @@
+<style>
+
+
+
+  /* 幅をスタイルガイドへ調整 */
+  .acms-container {
+    max-width: 1180.999px;
+  }
+
+  /* リビジョンの幅を調整 */
+  .acms-admin-revison-admin {
+    margin: 10px;
+  }
+
+  .acms-admin-edit-info .acms-admin-table td,
+  .acms-admin-edit-info .acms-admin-table th {
+    border: 0;
+  }
+  .acms-admin-edit-info > p {
+    margin-bottom: 1em;
+  }
+  .acms-admin-edit-info > p a{
+    text-decoration: underline;
+  }
+  .acms-admin-edit-info > p a:hover{
+    text-decoration: none;
+  }
+
+
+    /* ヘッダーを黒背景へ */
+  #adminBox {
+    margin-bottom: 0;
+    background: #333;
+  }
+
+
+  #loginUserStatus,
+  #loginUserStatus strong {
+    color: #fff;
+  }
+
+  /*背景色グレー変更*/
+  .acms-admin-btn-action-group table,
+  .acms-admin-btn-action-group td,
+  .acms-admin-btn-action-group th,
+  .acms-admin-btn-action-group,
+  .acms-admin-revison-admin,
+  .entryFormImageTable,
+  #entryForm,
+  .acms-admin-tabs-panel{
+    background-color:  #efefef!important;
+  }
+
+  /*背景色黒変更*/
+  .acms-admin-edit-info-heading,
+  .entryFormColumnItem .sorthandle,
+  .acms-admin-admin-title2{
+    background-color: #333!important;
+  }
+
+
+  /*角丸を追加*/
+  .acms-admin-revison-admin,
+  .acms-admin-btn-action-group,
+  .entryFormWrapper,
+  #more ,
+  .formEntryActionUnit,
+  #entryForm,
+  .acms-admin-edit-info,
+  .acms-admin-edit-info-heading,
+  .acms-admin-tabs-panel,
+  .acms-admin-admin-title2 {
+    border-radius: 3px!important;
+  }
+
+  .entryFormColumnHead {
+    border-radius: 3px 3px 0 0!important;
+  }
+
+  .entryFormColumnBody,
+  .comPost {
+    border-radius:  0 0 3px 3px!important;
+  }
+
+
+  #js-layout-move {
+    display: none;
+  }
+  #js-layout-move a {
+  }
+  #js-layout-move a:hover {
+  }
+
+</style>
+
+<script>
+
+  //参考
+  //https://qiita.com/webbingstudio@github/items/5ee65c3c68c859532627
+
+  ACMS.Ready(function() {
+    var f = $('form#entryForm');
+    var current_rccd = '%{RCCD}';
+    var current_ccd = '%{CCD}';
+    var current_cname = '%{CATEGORY_NAME}';
+    var current_eid = '%{EID}';
+    var current_view = '%{VIEW}';
+
+    //レイアウト機能用
+    $('#js-layout-move').appendTo($('#loginUserStatus')).css('display','inline');
+    $('#adminBox .clearHidden').before('<a href="/dev/styleguide/page-gideline.html" class="js-popup_setting acms-admin-btn-admin acms-admin-btn-admin-info">スタイルガイドを開く</a>');
+
+
+    // デフォルトのステータスを「公開」にする
+    $('select[name="status"]', f).val('open');
+
+    // タグ欄を非表示にする
+    $('input[name="tag"]', f).closest('tr')
+        .css({
+          display: 'none'
+        });
+
+    // カテゴリーを変更不可にする
+    if(current_cname == '') {
+      current_label = "指定なし";
+    } else {
+      current_label = current_cname;
+    }
+    $('select[name="category_id"]', f).closest('td')
+        .wrapInner('<div style="display: none;"></div>')
+        .append('<span class="acms-admin-text-danger">' + current_label + '</span>');
+
+
+    // インデキシングの後に説明文を追加する
+    $('input[name="indexing"]', f).closest('tr').find('th').append('<i class="acms-admin-icon-tooltip js-acms-tooltip acms-admin-margin-left-mini" data-acms-tooltip="チェックを外すと、このエントリーは一覧ページに表示されない「隠しページ」となります。"></i>');
+
+    // 新規作成時のタイトルを自動入力する
+    if(current_cname == '') {
+      current_label = '';
+    } else {
+      current_label = current_cname + '：';
+    }
+    if(current_eid == ''){
+      var now = new Date();
+      var timestamp = '';
+      timestamp =
+          now.getFullYear()
+          + '-' + ('0' + (now.getMonth() + 1)).slice(-2)
+          + '-' + ('0' + now.getDate()).slice(-2)
+          + ' ' + ('0' + now.getHours()).slice(-2)
+          + ':' + ('0' + now.getMinutes()).slice(-2)
+          + ':' + ('0' + now.getSeconds()).slice(-2);
+
+      $('input[name="title"]', f).val(current_label + timestamp);
+    }
+  });
+</script>

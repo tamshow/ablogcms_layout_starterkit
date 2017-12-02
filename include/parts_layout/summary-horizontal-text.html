@@ -1,0 +1,34 @@
+<!-- BEGIN_MODULE Entry_Summary -->
+
+<!-- BEGIN_IF [%{VIEW}/eq/entry] -->
+<h2 class="e-heading1 e-heading1--type2"><span>%{CATEGORY_NAME}</span></h2>
+<!-- END_IF -->
+
+<div class="c-summary-horizontal-assy is-mb-medium">
+  <ul class="l-grid-assy-4to2to1 js-grid-match-height">
+    <!-- BEGIN unit:loop -->
+    <!-- BEGIN entry:loop -->
+    <li class="l-grid c-card c-card--bd c-card--bg c-card--hover">
+      <a href="{url}" class="js-link_match_location-full">
+        <div class="c-card__body">
+          <p class="c-card__title">{title}</p>
+
+          <p class="c-card__text">
+            <!-- BEGIN_IF [<!-- BEGIN veil -->{entryIndexTxt}[base64]<!-- END veil -->/nem/] -->
+            {entryIndexTxt}
+            <!-- ELSE -->
+            {summary}[trim(150, '...')]
+            <!-- END_IF -->
+          </p>
+        </div>
+      </a>
+    </li>
+    <!-- END entry:loop -->
+    <!-- END unit:loop -->
+  </ul>
+</div>
+
+<!-- ページャー -->
+<!-- #include file="/include/parts/pager.html" -->
+
+<!-- END_MODULE Entry_Summary -->

@@ -1,0 +1,71 @@
+<!-- BEGIN pager:veil -->
+<div class="c-pagenavi" aria-label="ページ送り">
+  <!-- BEGIN backLink -->
+  <a class="c-previouspostslink" rel="prev" href="{url}"></a>
+  <!-- END backLink -->
+  <!-- BEGIN firstPage:veil -->
+  <a href="{firstPageUrl}" {pageCurAttr}[raw]>{firstPage}</a>
+  <span class="c-extend">...</span>
+  <!-- END firstPage:veil -->
+  <!-- BEGIN page:loop -->
+  <span {pageCurAttr}[raw]><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->  {page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span>
+  <!-- END page:loop -->
+  <!-- BEGIN lastPage:veil -->
+  <span class="c-extend">...</span>
+  <a href="{lastPageUrl} {pageCurAttr}[raw] ">{lastPage}</a>
+  <!-- END lastPage:veil -->
+  <!-- BEGIN forwardLink -->
+  <a class="c-nextpostslink" rel="next" href="{url}"></a>
+  <!-- END forwardLink -->
+</div>
+<!-- END pager:veil -->
+
+<!-- BEGIN simplePager:veil -->
+<div class="c-pager" aria-label="ページ送り">
+  <ul class="c-pager__inner">
+    <!-- BEGIN prevPage -->
+    <li class="c-pager__prev"><a href="{url}" class="e-btn">前ページ</a></li>
+    <!-- END prevPage -->
+    <!-- BEGIN nextPage -->
+    <li class="c-pager__next"><a href="{url}" class="e-btn">次ページ</a></li>
+    <!-- END nextPage -->
+  </ul>
+</div>
+<!-- END simplePager:veil -->
+
+
+<!-- BEGIN_MODULE Entry_Field -->
+<!-- BEGIN_IF [{pagerState}/neq/disabled] -->
+<!-- END_MODULE Entry_Field -->
+
+
+<!-- BEGIN serialNavi:veil -->
+<div class="c-pager" aria-label="ページ送り">
+  <ul class="c-pager__inner">
+    <!-- BEGIN prevLink -->
+    <li class="c-pager__prev"><a href="{url}" class="e-btn">前のエントリーを読む</a></li>
+    <!-- END prevLink -->
+    <!-- BEGIN prevNotFound -->
+    <li class="c-pager__prev"><a class="e-btn is-disabled">前のエントリーを読む</a></li>
+    <!-- END prevNotFound -->
+    <!-- BEGIN nextLink -->
+    <li class="c-pager__next"><a href="{url}" class="e-btn">次のエントリーを読む</a></li>
+    <!-- END nextLink -->
+    <!-- BEGIN nextNotFound -->
+    <li class="c-pager__next"><a class="e-btn is-disabled">次のエントリーを読む</a></li>
+    <!-- END nextNotFound -->
+  </ul>
+</div>
+<!-- END serialNavi:veil -->
+
+
+<!-- BEGIN_MODULE Entry_Field -->
+<!-- END_IF -->
+<!-- END_MODULE Entry_Field -->
+
+
+
+
+
+
+

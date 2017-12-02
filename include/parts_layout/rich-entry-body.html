@@ -1,0 +1,95 @@
+<!-- BEGIN_MODULE Entry_Body id="entry_body_rich-editor"-->
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+<article class="clearfix {entry:loop.class}" aria-labelledby="layout-entry_body">
+  <!--#include file="/admin/entry/title.html"-->
+
+  <!-- BEGIN notFound -->
+  <div class="e-heading-unit">
+    <h1 class="e-heading2 e-heading2--type2"><span>Not found</span></h1>
+  </div>
+  <p class="e-text">ただいまページを準備しております。もうしばらくお待ちください。</p>
+  <!-- END notFound -->
+  <!-- エントリーのタイトル　開始▼▼ -->
+  <!-- BEGIN title:veil -->
+
+  <!-- BEGIN_IF [%{CCD}/eq/news] -->
+  <div class="e-heading-unit">
+    <p class="e-text-week">{date#Y}.{date#m}.{date#d}</p>
+  </div>
+  <!-- END_IF -->
+
+  <!-- END title:veil -->
+
+  <div <!-- BEGIN_MODULE Touch_NotEdit -->class="rich-editor"<!-- END_MODULE Touch_NotEdit -->>
+
+  <!-- BEGIN entry-column:veil -->
+  <div class="acms-entry entry-column">
+    <div class="acms-grid">
+      <!-- BEGIN unit:veil -->
+      <!--#include file="/include/unit.html"-->
+      <hr class="clearHidden" />
+      <!-- END unit:veil -->
+      <!-- 続きを読む -->
+      <!-- BEGIN continueLink:veil -->
+      <p class="e-text-arrow e-text-right"><a href="{continueUrl}">「{continueName}」 の続きを読む</a>
+      </p>
+      <!-- END continueLink:veil -->
+    </div>
+  </div>
+  <!-- END entry-column:veil -->
+
+  <!-- BEGIN formBody -->
+  <!--#include file="/include/form/unit.html"-->
+  <hr class="clearHidden" />
+  <!-- END formBody -->
+
+  <!-- BEGIN adminEntryEdit -->
+  <div class="acms-box-medium">
+    <!--#include file="/admin/entry/edit.html"-->
+    <!--#include file="/admin/entry/add.html"-->
+  </div>
+  <!-- END adminEntryEdit -->
+
+  <!-- BEGIN adminFormEdit -->
+  <!--#include file="/admin/form2/edit.html"-->
+  <!-- END adminFormEdit -->
+  </div>
+  <!-- BEGIN_MODULE Touch_Entry -->
+  <footer class="entry-footer">
+    <div class="clearfix">
+      <div>
+        <!-- BEGIN tag:veil -->
+        <ul class="e-list-inline">
+          <!-- BEGIN tag:loop -->
+          <li><a href="/entry.html/tag/{name}">{name}</a></li>
+          <!-- END tag:loop -->
+        </ul>
+        <!-- END tag:veil -->
+      </div>
+      <div class="acms-col-md-6">
+        <!-- SNSシェアボタン -->
+        <!--#include file="/include/parts/snsCustomize.html"-->
+      </div>
+    </div>
+  </footer>
+  <!-- END_MODULE Touch_Entry -->
+
+  <div class="acms-box-medium">
+    <!--#include file="/admin/entry/action.html"-->
+    <!--#include file="/admin/entry/revision-info.html"-->
+  </div>
+</article>
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+
+<!-- BEGIN_IF [%{CCD}/eq/news] -->
+<!-- ページャー -->
+<!-- #include file="/include/parts/pager.html" -->
+<!-- END_IF -->
+
+
+<!-- END_MODULE Entry_Body -->
+
+

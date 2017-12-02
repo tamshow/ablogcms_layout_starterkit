@@ -1,0 +1,84 @@
+<h3 class="acms-admin-admin-title2">ページタイトル設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+
+  <!-- BEGIN_IF [%{PCCD}/em/] -->
+  <tr>
+    <th><label for="input-contact-box_title">お問い合わせボックスタイトル</label></th>
+    <td>
+      <input type="text" name="contact-box_title" value="{contact-box_title}" id="input-contact-box_title"  style="width:80%;" />
+      <input type="hidden" name="field[]" value="contact-box_title" />
+      <input type="hidden" name="contact-box_title:search" value="0" />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-contact-box_description">お問い合わせボックス説明文</label></th>
+    <td>
+      <textarea name="contact-box_description" rows="5" id="input-contact-box_description" style="width:80%;">{contact-box_description}</textarea>
+      <input type="hidden" name="field[]" value="contact-box_description" />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-contact-box_url">お問い合わせボックスURL</label></th>
+    <td>
+      <input type="text" name="contact-box_url" value="{contact-box_url}" id="input-contact-box_url"  style="width:80%;" />
+      <input type="hidden" name="field[]" value="contact-box_url" />
+      <input type="hidden" name="contact-box_url:search" value="0" />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-img-category_image">背景画像</label><i data-acms-tooltip="カテゴリーの画像を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
+    <td>
+      <!-- BEGIN category_image@path:veil -->
+      <img src="%{ARCHIVES_DIR}{category_image@path}" width="600" class="acms-admin-img-responsive"><br>
+      <input type="hidden" name="category_image@old" value="{category_image@path}">
+      <div class="acms-admin-form-checkbox">
+        <input type="checkbox" name="category_image@edit" value="delete" id="input-img-category_image_delete">
+        <label for="input-img-category_image_delete">
+          <i class="acms-admin-ico-checkbox"></i>削除
+        </label>
+      </div>
+      <!-- END category_image@path:veil -->
+      <input type="file" name="category_image" size="20" id="input-img-category_image">
+      <input type="hidden" name="field[]" value="category_image">
+      <input type="hidden" name="category_image:extension" value="image">
+      <input type="hidden" name="category_image@size" value="1400">
+      <input type="hidden" name="category_image@filename" value="">
+    </td>
+  </tr>
+
+  <!-- ELSE -->
+
+  <tr>
+    <th>一覧で表示する画像(750x500)
+      <i data-acms-tooltip="750x500で作成してください。※大きな画像は中心でトリミングされます。" class="acms-icon-tooltip js-acms-tooltip"></i>
+    </th>
+    <td>
+      <!-- BEGIN page_image@path:veil -->
+      <img src="%{ARCHIVES_DIR}{page_image@path}" width="300" class="acms-admin-img-responsive"><br>
+      <input type="hidden" name="page_image@old" value="{page_image@path}">
+      <div class="acms-admin-form-checkbox">
+        <input type="checkbox" name="page_image@edit" value="delete" id="input-img-page_image_delete">
+        <label for="input-img-page_image_delete">
+          <i class="acms-admin-ico-checkbox"></i>削除
+        </label>
+      </div>
+      <!-- END page_image@path:veil -->
+      <input type="file" name="page_image" size="20" id="input-img-page_image">
+      <input type="hidden" name="field[]" value="page_image">
+      <input type="hidden" name="page_image:extension" value="image">
+      <input type="hidden" name="page_image@size" value="1400">
+      <input type="hidden" name="page_image@filename" value="">
+    </td>
+  </tr>
+  <!-- END_IF -->
+
+  <tr>
+    <th><label for="input-text-page_description">一覧で表示する説明文</label><i data-acms-tooltip="カテゴリーの 説明文を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
+    <td>
+      <textarea name="page_description" rows="5" id="input-text-page_description" style="width:80%;">{page_description}</textarea>
+      <input type="hidden" name="field[]" value="page_description" />
+    </td>
+  </tr>
+
+
+</table>

@@ -1,0 +1,45 @@
+.rich-editor .acms-grid:before,
+.rich-editor .acms-grid:after,
+.rich-editor .acms-grid-r:before,
+.rich-editor .acms-grid-r:after {
+  display: none !important;
+}
+
+.rich-editor [class^="acms-col-"],
+.rich-editor [class*=" acms-col-"] {
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 37.4375em) {
+  .rich-editor [class^="acms-col-"],
+  .rich-editor [class*=" acms-col-"] {
+    margin-bottom: 30px;
+  }
+}
+
+.rich-editor [class*="column-image-"],
+.rich-editor [class*="column-media-"],
+.rich-editor [class*="column-eximage-"],
+.rich-editor [class*="column-yolp-"],
+.rich-editor [class*="column-youtube-"],
+.rich-editor [class*="column-video-"],
+.rich-editor [class*="column-file-"] {
+  margin-bottom: 30px;
+}
+
+.rich-editor [class*="column-image-"] .caption,
+.rich-editor [class*="column-media-"] .caption,
+.rich-editor [class*="column-eximage-"] .caption,
+.rich-editor [class*="column-yolp-"] .caption,
+.rich-editor [class*="column-youtube-"] .caption,
+.rich-editor [class*="column-video-"] .caption,
+.rich-editor [class*="column-file-"] .caption {
+  margin-bottom: 0;
+}
+
+
+.rich-editor [class*="column-file-"] a,
+.rich-editor [class*="column-file-"] .columnIcon,
+.rich-editor [class*="column-file-"] .caption {
+  display: inline;
+}

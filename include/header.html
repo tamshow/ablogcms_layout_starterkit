@@ -1,0 +1,82 @@
+<!-- Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!--[if IE]>
+<div class="is-prompt">
+  <p>お使いのブラウザはバージョンが古いため、サイトを快適にご利用いただけないかもしれません。<br>
+    <a href="http://www.whatbrowser.org/intl/ja/">新しいブラウザをお試しできます。
+      ブラウザは無料、インストールも簡単です。</a>
+</div>
+<![endif]-->
+
+
+<noscript>
+  <div class="is-prompt">
+    <p>お使いのブラウザではJavaScriptが無効に設定されています。有効にしてご利用ください。</p>
+  </div>
+</noscript>
+
+
+<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+<!-- admin上書きパーツ -->
+<!--#include file="/acms-admin-add-css-js.html"-->
+<!-- END_MODULE Touch_SessionWithAdministration -->
+
+<!-- ※管理用パーツ -->
+<!--#include file="/admin/action.html"-->
+
+
+<!-- BEGIN_MODULE Blog_Field -->
+
+
+
+<header class="l-header " id="js-header-fixed" role="banner">
+  <div class="l-header-description">
+    <div class="l-header-primary">
+      <div class="l-header-logo">
+        <div class="l-header-logo__img"><a href=""><img src="/assets/img/common/h_logo.png" alt=""></a> </div>
+        <p class="l-header-logo__lead">リード文リード文リード文リード文</p>
+        <p class="l-header-logo__name">ほげ株式会社</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="l-header-controls">
+    <button type="button" class="l-header-menu-sp-btn" aria-controls="aria-sp-nav" aria-expanded="false" aria-label="開く" data-toggle-sp-nav><i class="material-icons">menu</i></button>
+  </div>
+  <div class="l-header-main-pc">
+    <!-- BEGIN_MODULE Links id="global_navi" -->
+    <nav role="navigation" aria-label="サイト全体のメニュー">
+      <!-- BEGIN navigation:loop -->
+      <ul>
+        <!-- BEGIN loop -->
+        <li>
+          <a href="{url}" class="js-link_match_location">{name}</a></li>
+        <!-- END loop -->
+      </ul>
+    </nav>
+    <!-- END_MODULE Links -->
+  </div>
+  <div class="l-header-main-sp" aria-hidden="true" data-body-sp-nav style="display: none">
+    <div id="aria-nav-sp">
+      <!-- BEGIN_MODULE Links id="global_navi" -->
+      <nav role="navigation" aria-label="スマートフォン用サイト全体のメニュー">
+        <!-- BEGIN navigation:loop -->
+        <ul>
+          <!-- BEGIN loop -->
+          <li>
+            <a href="{url}" class="js-link_match_location">{name}</a></li>
+          <!-- END loop -->
+        </ul>
+      </nav>
+      <!-- END_MODULE Links -->
+
+    </div>
+  </div>
+</header>
+<div id="js-header-nav-sp-bg" class="l-header-nav-sp-bg"></div>
+
+<!-- END_MODULE Blog_Field -->
+

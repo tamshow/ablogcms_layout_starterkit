@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <!--#include file="/include/head/meta.html" -->
+  <!--#include file="/include/head/link.html" -->
+  <!--#include file="/include/head/js.html" -->
+</head>
+
+<body>
+<!--#include file="/include/body_start.html" -->
+<!--#include file="/include/header.html" -->
+
+<!--#include file="/include/parts/main-visual.html" -->
+<!--#include file="/include/parts/breadcrumb.html" -->
+
+<main class="l-main" role="main">
+  <div class="l-container">
+    <div class="l-container__inner">
+      <div class="l-content-block">
+
+        <!-- BEGIN_MODULE Blog_Field -->
+
+        <div class="rich-editor">
+          <h2>入力内容の送信が完了しました。</h2>
+          <p>ご連絡ありがとうございます。
+            <br>先ほどメールを1通送信させていただきましたのでお手数ですがメールをご確認ください。
+            <br>なお、48時間以上たっても弊社からのメールが届かない場合は、ホームページからのご連絡が完了していない可能性がございます。
+            <!-- BEGIN tel:veil -->
+            <br>お手数ですがTEL : {tel}にお電話ください。
+            <!-- END tel:veil --></p>
+
+          <div class="e-btn-group">
+            <a href="/" class="e-btn e-btn--xlarge">トップページへ<i class="material-icons is-right">navigate_next</i></a>
+          </div>
+
+        </div>
+
+        <!-- END_MODULE Blog_Field -->
+
+        <!-- SEOチェック -->
+        <div class="acms-container">
+          <!--#include file="/include/%{VIEW}_check.html" -->
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!--#include file="/include/footer.html" -->
+</body>
+
+</html>

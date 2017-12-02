@@ -1,0 +1,56 @@
+---------------------------------------------------------------
+本メールはシステムからの自動配信メールです。
+---------------------------------------------------------------
+
+<!-- BEGIN_MODULE Blog_Field -->
+
+この度は“<!-- BEGIN company_name:veil -->{company_name}<!-- END company_name:veil -->”へお問い合わせいただき、ありがとうございました。
+お問い合わせフォームより、以下の内容で送信いたしました。
+
+内容確認後、担当者よりEメールもしくはお電話でご連絡いたします。
+しばらくお待ち下さい。
+お問い合わせ誠にありがとうございました。
+
+<!-- END_MODULE Blog_Field -->
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+受付日時：%{Y}年%{n}月%{j}日 %{H}:%{i}:%{s}
+■お問い合わせ情報
+
+お問い合わせ内容：
+{inquiry}[raw]
+
+お問い合わせ項目：
+{form_contact_item}
+
+
+■お客様情報
+
+お名前 ： {name}[raw]
+お名前（かな） ： {kana}[raw]
+メールアドレス ： {email}
+電話番号 ： {tel}
+ご住所 ： 〒{postal-code}　{address-level1}　{address-level2}　{address-line1}
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+本メールについて心あたりがない場合は、大変お手数ですが
+本メールをご返送いただきますようお願い申し上げます。
+
+--------------------------------------------------------------------------------------------------
+<!-- BEGIN_MODULE Blog_Field -->
+
+<!-- BEGIN company_name:veil -->{company_name}<!-- END company_name:veil -->
+<!-- BEGIN zip:veil -->〒{zip}<!-- END zip:veil -->
+<!-- BEGIN address:veil -->{address}<!-- END address:veil -->
+<!-- BEGIN tel:veil -->TEL :{tel}<!-- END tel:veil -->
+
+<!-- END_MODULE Blog_Field -->
+
+
+
+
+
+
+
