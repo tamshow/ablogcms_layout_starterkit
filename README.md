@@ -1,7 +1,7 @@
 
 # デモサイト
 
- [http://starterkit.masizime.com/](http://starterkit.masizime.com/) 
+<a href="http://starterkit.masizime.com/" target="_blank">http://starterkit.masizime.com/</a>
 
 
 # カスタマイズについて
@@ -13,14 +13,16 @@
 
 ##組み込みjs
 
-[https://developer.a-blogcms.jp/document/reference/builtinjs/#viewing](https://developer.a-blogcms.jp/document/reference/builtinjs/#viewing) 
+<a href="https://developer.a-blogcms.jp/document/reference/builtinjs/#viewing" target="_blank">https://developer.a-blogcms.jp/document/reference/builtinjs/#viewing</a>
+
+
 
 
 
 
 ## グローバル変数の拡張
 
-[https://developer.a-blogcms.jp/blog/acmscamp/globalvars.html](https://developer.a-blogcms.jp/blog/acmscamp/globalvars.html)
+<a href="https://developer.a-blogcms.jp/blog/acmscamp/globalvars.html" target="_blank">https://developer.a-blogcms.jp/blog/acmscamp/globalvars.html</a>
 
 ```
 /**
@@ -46,7 +48,7 @@ public function extendsGlobalVars(&$globalVars)
 
 ## データのインポート
 
-[https://developer.a-blogcms.jp/document/datamanagement/blogImport.html](https://developer.a-blogcms.jp/document/datamanagement/blogImport.html) 
+<a href="https://developer.a-blogcms.jp/document/datamanagement/blogImport.html" target="_blank">https://developer.a-blogcms.jp/document/datamanagement/blogImport.html</a>
 
 
 テーマ内の下記に配置
