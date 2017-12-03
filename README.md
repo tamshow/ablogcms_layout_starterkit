@@ -1,20 +1,26 @@
+
+# デモサイト
+
+ [http://starterkit.masizime.com/](http://starterkit.masizime.com/) 
+
+
 # カスタマイズについて
 
 ## 全体
 
-- カスタムフィールドなど基本部分はsite2016のをベースに作成
+カスタムフィールドなど基本部分はsite2016のをベースに作成
 
 
 ##組み込みjs
 
--  [viewing機能を消す](https://developer.a-blogcms.jp/document/reference/builtinjs/#viewing) 
+[https://developer.a-blogcms.jp/document/reference/builtinjs/#viewing](https://developer.a-blogcms.jp/document/reference/builtinjs/#viewing) 
 
 
 
 
 ## グローバル変数の拡張
 
-- [グローバル変数拡張](https://developer.a-blogcms.jp/blog/acmscamp/globalvars.html)
+[https://developer.a-blogcms.jp/blog/acmscamp/globalvars.html](https://developer.a-blogcms.jp/blog/acmscamp/globalvars.html)
 
 ```
 /**
@@ -40,7 +46,8 @@ public function extendsGlobalVars(&$globalVars)
 
 ## データのインポート
 
--  [データのインポート](https://developer.a-blogcms.jp/document/datamanagement/blogImport.html) 
+[https://developer.a-blogcms.jp/document/datamanagement/blogImport.html](https://developer.a-blogcms.jp/document/datamanagement/blogImport.html) 
+
 
 テーマ内の下記に配置
 
